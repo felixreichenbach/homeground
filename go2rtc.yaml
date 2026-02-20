@@ -1,0 +1,6 @@
+streams:
+  living_room_high:
+    - rtsp://username:password@192.168.1.XXX:554/stream1
+  living_room_low:
+    - rtsp://username:password@192.168.1.XXX:554/stream2
+
