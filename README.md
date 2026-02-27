@@ -41,3 +41,10 @@ Create .htpassword file
 docker run --rm --entrypoint htpasswd httpd -Bbn admin password > .htpasswd
 ```
 
+## Certbot generate certificates
+
+```shell
+docker-compose run --rm certbot certonly --webroot --webroot-path=/var/www/certbot \
+  --email your@email.com --agree-tos --no-eff-email \
+  -d yourdomain.com
+```
