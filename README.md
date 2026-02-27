@@ -32,3 +32,12 @@ docker run -d \
   -v ~/go2rtc:/config \
   alexxit/go2rtc:latest-hardware
 ```
+
+## Docker Compose Setup
+
+Create .htpassword file
+
+```shell
+docker run --rm --entrypoint htpasswd httpd -Bbn admin password > .htpasswd
+```
+
