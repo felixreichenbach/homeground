@@ -101,5 +101,7 @@ sudo docker-compose up -d
 
 ```
 
-Navigate to your `yourdomain.com` and you should see a username/password prompt.
+Navigate to your `yourdomain.com` and you should see a username/password prompt and once you passed authentication, go to the config tab and add your own cameras.
+
+Have fun!
 
