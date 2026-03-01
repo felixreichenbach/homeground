@@ -103,14 +103,15 @@ sudo docker-compose up -d
 
 Navigate to your `yourdomain.com` and you should see a username/password prompt and once you passed authentication, go to the config tab and add your own cameras.
 
-Have fun!
 
-## Utils
+## Video Stream Access Token
 
-Generate Base64 token in case basic auth isn't possible:
+The Grafana video panel doesn't support basic auth, I have added a token based authentication for the video streams. All you need to do is generate you specific token and add it to your `nginx.conf` file instead of `YOUR_SECURE_TOKEN_HERE`.
 
-Generate random URL safe string:
+Generate Base64 token:
 
 ```shell
-openssl rand -base64 24 | tr '+/' '-_' | tr -d '=' | tr -d '\n'
+openssl rand -base64 64 | tr '+/' '-_' | tr -d '=' | tr -d '\n'
 ```
+
+Have fun and let me know if you see improvements / suggestions!
