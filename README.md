@@ -105,3 +105,12 @@ Navigate to your `yourdomain.com` and you should see a username/password prompt 
 
 Have fun!
 
+## Utils
+
+Generate Base64 token in case basic auth isn't possible:
+
+Generate random URL safe string:
+
+```shell
+openssl rand -base64 24 | tr '+/' '-_' | tr -d '=' | tr -d '\n'
+```
