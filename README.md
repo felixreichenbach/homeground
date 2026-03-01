@@ -21,10 +21,10 @@ I am using a Raspberry Pi 5 however this should work on any other Linux computer
 ## Network Configuration
 
 To be able to reach your reverse proxy we are going to setup later, you need to open two network ports:
-- Port 80 (Needed to create and update TLS certificates provided by (Let's Encrypt)[https://letsencrypt.org/getting-started/])
+- Port 80 (Needed to create and update TLS certificates provided by [Let's Encrypt](https://letsencrypt.org/getting-started/))
 - Port 443 (Used for all the other traffic)
 
-Port forwarding can cause security issues if not done correctly! If you are unfamiliar please talk to somebody who is familiar with the topic and/familiarize yourself (Port Forwarding a Basic Guide)[https://www.youtube.com/watch?v=6ExS1oRhhYQ].
+Port forwarding can cause security issues if not done correctly! If you are unfamiliar please talk to somebody who is familiar with the topic and/familiarize yourself [Port Forwarding a Basic Guide](https://www.youtube.com/watch?v=6ExS1oRhhYQ).
 
 As most people won't have static public IP addresses / domains, I recommend to consider dynamic DNS (DDNS) providers such as DuckDNS or DynDNS. In my case my internet provider provides this as a free service. 
 
@@ -38,7 +38,7 @@ Verify your setup as follows:
 
 ## Retrieve TLS Certificates
 
-To encrypt the traffic between a browser outside of your local network and the reverse proxy behind your router, we need to create TLS certificates. An easy way to do this is via (Let's Encrypt)[] and (Certbot)[https://certbot.eff.org/].
+To encrypt the traffic between a browser outside of your local network and the reverse proxy behind your router, we need to create TLS certificates. An easy way to do this is via [Let's Encrypt](https://letsencrypt.org/docs/) and [Certbot](https://certbot.eff.org/).
 
 The following command will run the Certbot container and generate a certificate for your domain.
 
