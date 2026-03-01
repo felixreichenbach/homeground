@@ -71,11 +71,35 @@ sudo docker-compose down
 sudo docker-compose up -d
 ```
 
+> **⚠️ WARNING:**
+> This setup does NOT protect you from unauthorized access to your cameras!
+> Anyone who can reach your domain can potentially view your camera streams! At least add some basic authentication as explained in the next step!
 
 ## Add Authentication
 
-Create .htpassword file
+The next steps explain how to add some basic username / password authentication.
+
+To create the required `.htpasswd` file containing the username & hashed password you can simply run the following docker image:
 
 ```shell
 docker run --rm --entrypoint htpasswd httpd -Bbn admin password > .htpasswd
 ```
+
+Once your `.htpasswd` file is generated, you then have to enable the authentication within NGINX:
+
+1. In the `docker-compose.yaml`file uncomment line 10
+2. In the `nginx.conf` file uncomment lines 29 & 30
+
+
+> **⚠️ WARNING:**
+> To activate the configuration you must restart the containers!
+
+```shell
+sudo docker-compose down
+
+sudo docker-compose up -d
+
+```
+
+Navigate to your `yourdomain.com` and you should see a username/password prompt.
+
